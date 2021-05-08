@@ -1,17 +1,10 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import Layout from "./Layout";
+import Nav from "./Nav";
 
-function Layout(props) {
-  return (
-    <div className="container w-full min-w-full">
-      <Header />
-      {props.children}
-      <Footer />
-    </div>
-  );
-}
-
-Layout.propTypes = {};
-
-export default Layout;
+export {
+  React,
+  Layout, Header, Footer, Nav,
+};

@@ -1,13 +1,22 @@
 {
+    "english" : "English",
+    "vietnamese" : "Tiếng việt",
+    "lang" : "VI",
+    
     "home" : "Trang chủ",
     "title-home-page" : "Trang chủ yabe",
     "beauty_at_home" : "Làm đẹp tại nhà",
     "support_center" : "Trung tâm hỗ trợ",
     "career_opportunities" : "Cơ hội nghề nghiệp",
     "career_counseling" : "Tư vấn hướng nghiệp",
-    "customer" : "Khách hàng",
-    "english" : "English",
-    "vietnamese" : "Tiếng việt",
-    "lang" : "VI"
+    "registration_process" : "Quy Trình Đăng ký",
+    "training_program": "Chương trình đào tạo",
+    "cooperation_with_yabe": "Hợp tác cùng Yabe",
+    
+    "technician": "Kỹ thuật viên", 
+    "yabe_application" : "Ứng dụng Yabe",
+    "operation_regulation" : "Quy chế hoạt động",
+    "customer" : "Khách hàng"
+   
 
 }

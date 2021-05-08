@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import Layout from "../components/layout";
 // import { useIntl } from "gatsby-plugin-react-intl";
 // import { SEO } from "../components/common";
 // import { seo_keywords } from "../utils";
+import React, { useContext } from "react";
+import { Layout } from "../components/layout/";
 import {
   GlobalDispatchContext,
   GlobalStateContext,

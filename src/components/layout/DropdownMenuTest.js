@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import { ArrowDownIcon, LangIcon } from "../../assets/icons";
 import PropTypes from "prop-types";
 import { useIntl, changeLocale } from "gatsby-plugin-react-intl";
+import { Link } from "gatsby";
 
-const DropdownMenu = (props) => {
+const DropdownMenuTest = (props) => {
   const { list_sub_menu, title } = props;
   const intl = useIntl();
 
@@ -14,33 +15,36 @@ const DropdownMenu = (props) => {
   };
 
   return (
-    <Popover key={title} className="relative">
+    <Menu as="div" key={title} className="relative text-left">
       {({ open }) => (
         <>
           {title === "EN" || title === "VI" ? (
-            <Popover.Button
-              className={
-                open
-                  ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	"
-                  : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	 hover:text-general-primary-d"
-              }
-            >
-              <LangIcon className="w-5 h-5 mr-1" />
-              <span>{title}</span>
-            </Popover.Button>
+            <div>
+              <Menu.Button
+                className={
+                  open
+                    ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-base font-medium"
+                    : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-base font-medium hover:text-general-primary-d"
+                }
+              >
+                <LangIcon className="w-5 h-5 mr-1" />
+                <span>{title}</span>
+              </Menu.Button>
+            </div>
           ) : (
-            <Popover.Button
-              className={
-                open
-                  ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold"
-                  : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold hover:text-general-primary-d"
-              }
-            >
-              <span>{title}</span>
-              <ArrowDownIcon className="w-5 h-5" />
-            </Popover.Button>
+            <div>
+              <Menu.Button
+                className={
+                  open
+                    ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-base font-medium"
+                    : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-base font-medium hover:text-general-primary-d"
+                }
+              >
+                <span>{title}</span>
+                <ArrowDownIcon className="w-5 h-5" />
+              </Menu.Button>
+            </div>
           )}
-
           <Transition
             show={open}
             as={Fragment}
@@ -51,7 +55,7 @@ const DropdownMenu = (props) => {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel
+            <Menu.Items
               static
               className="absolute z-10 -ml-4 mt-3 transform px-2 w-auto max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
             >
@@ -68,39 +72,39 @@ const DropdownMenu = (props) => {
                         onClick={() => _onChangeLang(item?.key)}
                       >
                         <div className="py-2 w-full flex justify-center">
-                          <p className="text-lg font-light text-custom-text-black hover:text-general-primary-d">
+                          <p className="text-base font-light text-custom-text-black hover:text-general-primary-d">
                             {intl.formatMessage({ id: item.name })}
                           </p>
                         </div>
                       </button>
                     ) : (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className="flex items-start rounded-lg hover:bg-gray-50"
                       >
                         <div className="py-2 w-full flex justify-center">
-                          <p className="text-lg font-light text-custom-text-black hover:text-general-primary-d">
+                          <p className="text-base font-light text-custom-text-black hover:text-general-primary-d">
                             {intl.formatMessage({ id: item.name })}
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     )
                   )}
                 </div>
               </div>
-            </Popover.Panel>
+            </Menu.Items>
           </Transition>
         </>
       )}
-    </Popover>
+    </Menu>
   );
 };
 
-DropdownMenu.propTypes = {
+DropdownMenuTest.propTypes = {
   list_sub_menu: PropTypes.array,
   title: PropTypes.string,
   customButton: PropTypes.any,
 };
 
-export default DropdownMenu;
+export default DropdownMenuTest;

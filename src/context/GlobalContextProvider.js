@@ -13,7 +13,7 @@ function reducer(state, action) {
     case TOGGLE_THEME: {
       return {
         ...state,
-        theme: state.theme === "light" ? "dark" : "light",
+        theme: state.theme === "blue" ? "red" : "blue",
       };
     }
 

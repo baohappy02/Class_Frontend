@@ -1,13 +1,23 @@
-{
+{   
+    "english" : "English",
+    "vietnamese" : "Vietnamese",
+    "lang" : "EN",
+
     "home" : "Home page",
     "title_home_page" : "Yabe home page",
     "beauty_at_home" : "Beauty at home",
     "support_center" : "Support center",
     "career_opportunities" : "Career opportunities",
     "career_counseling" : "Career counseling",
-    "customer" : "Customer",
-    "english" : "English",
-    "vietnamese" : "Vietnamese",
-    "lang" : "EN"
+    "registration_process" : "Registration Process",
+    "training_program": "Training program",
+    "cooperation_with_yabe": "Cooperation with Yabe",
+
+    "technician": "Technician", 
+    "yabe_application" : "Yabe application",
+    "operation_regulation" : "Operation regulation",
+    "customer" : "Customer"
+    
+   
 
 }

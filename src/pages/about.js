@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Layout from "../components/layout";
+import { Layout } from "../components/layout/";
 import { TOGGLE_THEME } from "../context/types";
 import {
   GlobalDispatchContext,
@@ -17,7 +17,7 @@ function About() {
   return (
     <Layout>
       <div className="w-full h-full flex justify-center items-center">
-        About <div>{state.theme}</div>
+        About <div className='text-custom-text-black'>{state.theme}</div>
         <button onClick={() => _onChangeTheme()} className={'border-gray-500 ml-5'}>Change Theme Demo</button>
       </div>
     </Layout>
