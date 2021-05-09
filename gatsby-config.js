@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "yabe-home-page",
+    title: "cyml-page",
   },
   plugins: [
     {
@@ -10,6 +10,17 @@ module.exports = {
           require("tailwindcss"),
           require("./tailwind.config.js"), // Optional: Load custom Tailwind CSS configuration
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `GitHub`,
+        fieldName: `github`,
+        url: `https://api.github.com/graphql`,
+        headers: {
+          Authorization: `Bearer your-github-token`,
+        },
       },
     },
     "gatsby-plugin-image",

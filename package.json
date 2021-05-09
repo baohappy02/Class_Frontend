@@ -1,9 +1,9 @@
 {
-  "name": "yabe-home-page",
+  "name": "cyml-page",
   "version": "1.0.0",
   "private": true,
-  "description": "yabe-home-page",
-  "author": "Thanh Duy",
+  "description": "cyml-page",
+  "author": "Me",
   "keywords": [
     "gatsby"
   ],
@@ -26,6 +26,7 @@
     "gatsby-plugin-sass": "^4.4.0",
     "gatsby-plugin-sharp": "^3.4.1",
     "gatsby-source-filesystem": "^3.4.0",
+    "gatsby-source-graphql": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "i18next": "^20.2.2",
     "i18next-browser-languagedetector": "^6.1.0",

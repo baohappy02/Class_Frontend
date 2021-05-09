@@ -1,7 +1,6 @@
 import axios from "axios";
-import { configs } from "./configs";
-import { JWT_KEY } from "./constants";
-import Helper from "./helpers";
+import { Helper, configs, JWT_KEY } from "./";
+
 import { get } from "lodash";
 
 const headers = {};
@@ -48,11 +47,11 @@ const api = async (url, data, options = {}, version = "api/v1") => {
   try {
     const API = await getAxiosInstance({ version });
     if (options.method === "GET") {
-      return API({ url, params: data, ...options });
+      return console.log(API({ url, params: data, ...options }));;
     }
-    return API({ url, data, method: "POST", ...options });
+    return console.log(API({ url, data, method: "POST", ...options }));;
   } catch (error) {
-    return Promise.reject(error);
+    return console.log(Promise.reject(error));;
   }
 };
 

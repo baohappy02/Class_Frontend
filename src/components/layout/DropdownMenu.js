@@ -3,6 +3,7 @@ import { Popover, Transition } from "@headlessui/react";
 import { ArrowDownIcon, LangIcon } from "../../assets/icons";
 import PropTypes from "prop-types";
 import { useIntl, changeLocale } from "gatsby-plugin-react-intl";
+import { Link } from "gatsby";
 
 const DropdownMenu = (props) => {
   const { list_sub_menu, title } = props;
@@ -21,19 +22,19 @@ const DropdownMenu = (props) => {
             <Popover.Button
               className={
                 open
-                  ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	"
-                  : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	 hover:text-general-primary-d"
+                  ? "p-3 border rounded-full font-medium bg-green-400 hover:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-indigo-800 focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	"
+                  : "p-3 border rounded-full font-medium bg-green-400 hover:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	 hover:text-indigo-800"
               }
             >
-              <LangIcon className="w-5 h-5 mr-1" />
+              <LangIcon className="w-5 h-5 mr-1 " />
               <span>{title}</span>
             </Popover.Button>
           ) : (
             <Popover.Button
               className={
                 open
-                  ? "text-general-primary-d focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold"
-                  : "text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold hover:text-general-primary-d"
+                  ? "p-3 border rounded-full font-medium bg-green-400 hover:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-indigo-800 focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	"
+                  : "p-3 border rounded-full font-medium bg-green-400 hover:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-custom-text-black focus:outline-none cursor-pointe inline-flex items-center text-lg leading-4-5 font-semibold	 hover:text-indigo-800"
               }
             >
               <span>{title}</span>
@@ -53,38 +54,38 @@ const DropdownMenu = (props) => {
           >
             <Popover.Panel
               static
-              className="absolute z-10 -ml-4 mt-3 transform px-2 w-auto max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
+              className="absolute z-10 right-0 mt-3 transform px-2 w-auto max-w-md lg:mr-0 lg:right-1/2"
             >
-              <div className="ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="ring-1 ring-black ring-opacity-5 overflow-hidden  rounded-3xl">
                 <div
                   style={{ width: 180 }}
-                  className="relative grid gap-6 bg-white px-2 py-2 sm:gap-8 sm:px-2"
+                  className="relative grid gap-6 bg-white px-2 py-2 sm:gap-4 sm:px-2 bg-gradient-to-r from-green-300 via-indigo-100 to-purple-700 border-black"
                 >
                   {list_sub_menu?.map((item) =>
                     item.key ? (
                       <button
                         key={item.name}
-                        className="flex focus:outline-none items-start rounded-lg hover:bg-gray-50"
+                        className="flex focus:outline-none rounded-full items-start hover:bg-gradient-to-r from-yellow-400 via-red-300 to-pink-500 text-indigo-800"
                         onClick={() => _onChangeLang(item?.key)}
                       >
                         <div className="py-2 w-full flex justify-center">
-                          <p className="text-lg font-light text-custom-text-black hover:text-general-primary-d">
+                          <p className="text-lg font-medium hover:text-indigo-800 ">
                             {intl.formatMessage({ id: item.name })}
                           </p>
                         </div>
                       </button>
                     ) : (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
-                        className="flex items-start rounded-lg hover:bg-gray-50"
+                        to={item.href}
+                        className="flex items-start rounded-full hover:bg-gradient-to-r from-yellow-400 via-red-500 to-pink-300 text-indigo-800"
                       >
                         <div className="py-2 w-full flex justify-center">
-                          <p className="text-lg font-light text-custom-text-black hover:text-general-primary-d">
+                          <p className="text-lg font-medium hover:text-indigo-800 ">
                             {intl.formatMessage({ id: item.name })}
                           </p>
                         </div>
-                      </a>
+                      </Link>
                     )
                   )}
                 </div>

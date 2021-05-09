@@ -40,11 +40,20 @@ module.exports = {
        lineHeight: {
         '4-5': '1.3125rem', /* 21px */
         '5-5': '1.350rem',  /* 21.45px */
+       },
+       spacing: {
+        // screenS: '28.125rem',
+        // screenM: '650px',
+        // screenL: '740px',
        }
+       
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['hover'],
+      backgroundImage: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }

@@ -1,32 +1,25 @@
-// import { useIntl } from "gatsby-plugin-react-intl";
-// import { SEO } from "../components/common";
-// import { seo_keywords } from "../utils";
-import React, { useContext } from "react";
+
+import React, { useState, useEffect } from "react";
 import { Layout } from "../components/layout/";
-import {
-  GlobalDispatchContext,
-  GlobalStateContext,
-} from "./../context/GlobalContextProvider";
-import { TOGGLE_THEME } from "../context/types";
+import { SEO } from "../components/common";
 
-// markup
 const IndexPage = () => {
-  // const intl = useIntl();
-
-  const dispatch = useContext(GlobalDispatchContext);
-  const state = useContext(GlobalStateContext);
-
-  const _onChangeTheme = () => {
-    dispatch({
-      type : TOGGLE_THEME
-    })
-  }
+  const [starsCount, setStarsCount] = useState(0)
+  useEffect(() => {
+    // get data from GitHub api
+    fetch(`https://api.github.com/repos/gatsbyjs/gatsby`)
+      .then(response => response.json()) // parse JSON from request
+      .then(resultData => {
+        setStarsCount(resultData.name)
+      }) // set data for the number of stars
+  }, []);
 
   return (
     <Layout>
-      <div className="w-full h-full flex justify-center items-center">
-        Home <div>{state.theme}</div>
-        <button onClick={() => _onChangeTheme()} className={'border-gray-500 ml-5'}>Change Theme Demo</button>
+      <SEO title="Home Page"/>
+      <div className="h-screen">
+        xxx<br/>
+        <p>Runtime Data: Star count for the Gatsby repo {starsCount}</p>
       </div>
     </Layout>
   );
