@@ -1,4 +1,5 @@
-import { React, Header, Footer } from "./";
+import React from 'react';
+import { Header, Footer } from "./";
 
 function Layout(props) {
   return (
